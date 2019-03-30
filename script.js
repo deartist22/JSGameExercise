@@ -19,6 +19,13 @@ function startGame(){
 
 function startBadGuys() {
 	let hideout = randomUp();
+	let tempClass = "up";
+	hideout.classList.add(tempClass);
+	const time = Math.round(Math.random() * (1500-250) + 250);
+	setTimeout(function() {
+		hideout.classList.remove(tempClass);
+		if(!gameOver) startBadGuys();
+	}, time);
 }
 
 function randomUp() {
