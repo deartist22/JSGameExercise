@@ -9,15 +9,31 @@ let score = 0;
 btnStart.addEventListener('click', startGame);
 
 function startGame(){
-	//make board
+	btnStart.style.display = "none";
 	makeGameBoard();
+	startBadGuys();
 	//make bad guy
 	scoreBoard.innerHTML = score;
 
 }
 
+function startBadGuys() {
+	let hideout = randomUp();
+}
+
+function randomUp() {
+	const hideouts = document.querySelectorAll(".hideout");
+	const idx = Math.floor(Math.random() * hideouts.length);
+	if(hideouts[idx].badGuyId === lasthideout) {
+		return randomUp();
+	}
+	lasthideout = hideouts[idx].badGuyId;
+	return hideouts[idx];
+}
+
 function makeGameBoard() {
 	let hidOutsCreated = 8;
+
 	container.innerHTML = "";
 	for(let x = 0; x < hidOutsCreated; x++){
 		console.log('making');
@@ -50,3 +66,4 @@ function myShot() {
 function myShot2() {
 	
 }
+

@@ -59,3 +59,11 @@ button {
 .friend {
 	background-image: url(friend.jpg);
 }
+
+.hideout.up .badGuy {
+	top: 0;
+}
+
+.hideout.up2 .friend {
+	top: 0;
+}
