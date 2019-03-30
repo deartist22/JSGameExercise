@@ -20,7 +20,7 @@ function startGame(){
 function startBadGuys() {
 	let hideout = randomUp();
 	let temp = Math.floor(Math.random() * 4) + 1;
-	let tempClass = temp > 1 "up" : "up2";
+	let tempClass = temp > 1 ? "up" : "up2";
 	hideout.classList.add(tempClass);
 	const time = Math.round(Math.random() * (1500-250) + 250);
 	setTimeout(function() {
@@ -66,11 +66,15 @@ function makeGameBoard() {
 	}
 }
 
-function myShot() {
-
+function myShot(e) {
+	score++;
+	this.parentNode.classList.remove("up");
+	scoreBoard.innerHTML = score;
 }
 
 function myShot2() {
-	
+	score = score - 5;
+	this.parentNode.classList.remove("up2");
+	scoreBoard.innerHTML = score;	
 }
 
