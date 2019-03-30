@@ -19,7 +19,8 @@ function startGame(){
 
 function startBadGuys() {
 	let hideout = randomUp();
-	let tempClass = "up";
+	let temp = Math.floor(Math.random() * 4) + 1;
+	let tempClass = temp > 1 "up" : "up2";
 	hideout.classList.add(tempClass);
 	const time = Math.round(Math.random() * (1500-250) + 250);
 	setTimeout(function() {
@@ -40,10 +41,9 @@ function randomUp() {
 
 function makeGameBoard() {
 	let hidOutsCreated = 8;
-
 	container.innerHTML = "";
 	for(let x = 0; x < hidOutsCreated; x++){
-		console.log('making');
+	
 		let div = document.createElement("div");
 		div.setAttribute("class", "hideout");
 		div.badGuyId = x;
