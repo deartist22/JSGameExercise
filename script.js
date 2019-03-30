@@ -24,6 +24,29 @@ function makeGameBoard() {
 		let div = document.createElement("div");
 		div.setAttribute("class", "hideout");
 		div.badGuyId = x;
+
+		let badGuy = document.createElement("div");
+		badGuy.setAttribute("class", "badGuy");
+		badGuy.onclick = myShot;
+		div.appendChild(badGuy);
+
+		let friend = document.createElement("div");
+		friend.setAttribute("class", "friend");
+		friend.onclick = myShot2;
+		div.appendChild(friend);
+
+		let bricks = document.createElement("div");
+		bricks.setAttribute("class", "bricks");
+		div.appendChild(bricks);
+
 		container.appendChild(div);
 	}
+}
+
+function myShot() {
+
+}
+
+function myShot2() {
+	
 }
